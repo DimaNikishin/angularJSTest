@@ -1,0 +1,8 @@
+{
+  "users": [
+    {
+      "email": "angular@test.com",
+      "password": "UserPassword"
+    }
+  ]
+}
