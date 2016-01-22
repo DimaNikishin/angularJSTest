@@ -3,27 +3,43 @@
  */
 (function(){
   'use strict';
+
+  /**
+   * @memberof myApp.authentication
+   * @ngdoc controller
+   * @name authenticationController
+   */
+
   angular
     .module('myApp.authentication')
     .controller('authenticationController',authenticationController);
 
-  authenticationController.$inject = ['$scope','usersResolveService','authenticationService','$location'];
+  authenticationController.$inject = ['$scope','usersResolveService','authenticationService','$location','userService'];
 
-  function authenticationController($scope,usersResolveService,authenticationService, $location){
+  function authenticationController($scope,usersResolveService,authenticationService, $location,userService){
     var that = this;
     that.user = {};
-    that.validUsers = usersResolveService.data.users;
     that.login = login;
 
     function login(){
-      console.log(111)
-      authenticationService.login(that.user,that.validUsers,function(response) {
+      var users = getUsers();
+      authenticationService.login(that.user,users,function(response) {
         if (response.success) {
+          userService.update(users)
           $location.path('/index');
         } else {
           that.error = response.message;
         }
       })
+    }
+
+    function getUsers(){
+      if(userService.validUsers.length){
+        return userService.validUsers;
+      }
+      else{
+        return usersResolveService.data.users;
+      }
     }
   }
 })();

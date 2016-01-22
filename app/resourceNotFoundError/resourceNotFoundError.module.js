@@ -7,11 +7,11 @@
   /**
    * @memberof myApp
    * @ngdoc module
-   * @name myApp.index
+   * @name myApp.resourceNotFoundError
    */
 
   angular
-    .module('myApp.index', [
+    .module('myApp.resourceNotFoundError', [
       'ngRoute'
     ]);
 })();

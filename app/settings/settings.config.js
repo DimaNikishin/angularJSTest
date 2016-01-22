@@ -4,6 +4,11 @@
 (function(){
   'use strict';
 
+  /**
+   * @memberof myApp.settings
+   * @ngdoc config
+   */
+
   angular
     .module('myApp.settings')
     .config(settingsConfig);

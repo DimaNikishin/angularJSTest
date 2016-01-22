@@ -2,7 +2,11 @@
   "users": [
     {
       "email": "angular@test.com",
-      "password": "UserPassword"
+      "password": "UserPassword",
+      "name": "",
+      "surname": "",
+      "phone": "",
+      "logged": false
     }
   ]
 }

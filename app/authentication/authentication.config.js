@@ -4,6 +4,11 @@
 (function(){
   'use strict';
 
+  /**
+   * @memberof myApp.authentication
+   * @ngdoc config
+   */
+
   angular
     .module('myApp.authentication')
     .config(authenticationConfig);

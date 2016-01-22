@@ -3,6 +3,76 @@
         <div class="col-sm-12">
             <div class="jumbotron">
                 <h1>Settings</h1>
+                <button class="btn btn-danger" ng-click="settings.passworFormDisplay = !settings.passworFormDisplay">Change password</button>
+                <button class="btn btn-success" ng-click="main.navigate('/index')">Back</button>
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <div ng-show="settings.message" class="alert alert-danger">{{settings.message}}</div>
+                    <form name="formSettings" ng-submit="settings.update(settings.updateUser)">
+                        <div class="form-group">
+                            <label for="Name">Name</label>
+                            <input type="text" placeholder="Name" name="name" id="Name" class="settings-input" ng-model="settings.updateUser.name" ng-maxlength="255"/>
+                        </div>
+                        <div>
+                            <span ng-show="formSettings.name.$error.maxlength"  class="alert-danger">Name should not be more than 255 symbols.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Surname">Surname</label>
+                            <input type="text" placeholder="Surname" name="surname" id="Surname" class="settings-input" ng-model="settings.updateUser.surname" ng-maxlength="255"/>
+                        </div>
+                        <div>
+                            <span ng-show="formSettings.surname.$error.maxlength"  class="alert-danger">Surname should not be more than 255 symbols.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email">Email</label>
+                            <input type="email" placeholder="Email" name="email" id="Email" class="settings-input" ng-model="settings.updateUser.email" required/>
+                        </div>
+                        <div ng-show="formSettings.email.$touched">
+                            <span ng-show="formSettings.email.$error.required"  class="alert-danger">Please enter email.</span>
+                            <span ng-show="formSettings.email.$error.email" class="alert-danger">This is not a valid email.</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone">Phone</label>
+                            <input type="number" placeholder="380XXХХХХХХХ" name="phone" id="Phone" class="settings-input" ng-model="settings.updateUser.phone" phone/>
+                        </div>
+                        <div>
+                            <span ng-show="formSettings.phone.$error.phone"  class="alert-danger">Not valid phone number</span>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success" ng-disabled="!formSettings.$valid">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-6" ng-if="settings.passworFormDisplay">
+                <div>
+                    <form name="passwordSettings" ng-submit="settings.update(settings.updateUserPassword)">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="Password" name="password" id="password" class="settings-input" ng-model="settings.updateUserPassword.password" required ng-minlength="6" ng-maxlength="16" password/>
+                        </div>
+                        <div ng-if="passwordSettings.password.$touched">
+                            <span ng-show="passwordSettings.password.$error.required" class="alert-danger">Please enter password.</span>
+                            <span ng-show="passwordSettings.password.$error.maxlength" class="alert-danger">Password should be less than 16 and more than 6 symbols.</span>
+                            <span ng-show="passwordSettings.password.$error.minlength" class="alert-danger">Password should be less than 16 and more than 6 symbols.</span>
+                            <span ng-show="passwordSettings.password.$error.password" class="alert-danger">Illegal characters were entered</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="repeatPassword">Repeat password</label>
+                            <input type="password" placeholder="Password" name="passwordSettings" id="repeatPassword" class="settings-input" ng-model="settings.updateUserPassword.repeatPassword" required ng-minlength="6" ng-maxlength="16" password/>
+                        </div>
+                        <div ng-if="passwordSettings.passwordSettings.$touched">
+                            <span ng-show="passwordSettings.passwordSettings.$error.required" class="alert-danger">Please enter password.</span>
+                            <span ng-show="passwordSettings.passwordSettings.$error.maxlength" class="alert-danger">Password should be less than 16 and more than 6 symbols.</span>
+                            <span ng-show="passwordSettings.passwordSettings.$error.minlength" class="alert-danger">Password should be less than 16 and more than 6 symbols.</span>
+                            <span ng-show="passwordSettings.passwordSettings.$error.password" class="alert-danger">Illegal characters were entered</span>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-success" ng-disabled="!passwordSettings.$valid">Saved</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

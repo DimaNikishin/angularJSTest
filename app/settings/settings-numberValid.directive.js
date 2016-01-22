@@ -5,23 +5,23 @@
   'use strict';
 
   /**
-   * @memberof myApp.authentication
+   * @memberof myApp.settings
    * @ngdoc directive
-   * @name password
+   * @name phone
    */
 
   angular
-    .module('myApp.authentication')
-    .directive('password',password);
+    .module('myApp.settings')
+    .directive('phone',phone);
 
-  password.$inject = [];
+  phone.$inject = [];
 
-  function password(){
-    var INTEGER_REGEXP = /^([a-zA-Z-0-9]{1,})$/;
+  function phone(){
+    var INTEGER_REGEXP = /^380(\d{9})$/g;
     return {
       require: 'ngModel',
       link: function(scope, elm, attrs, ctrl) {
-        ctrl.$validators.password = function(modelValue) {
+        ctrl.$validators.phone = function(modelValue) {
           if (ctrl.$isEmpty(modelValue)) {
             // consider empty models to be valid
             return true;

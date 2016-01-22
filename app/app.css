@@ -18,3 +18,13 @@
 .jumbotron >h1 {
     color:	#ffcc00;
 }
+
+.settings-input {
+    display: block;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

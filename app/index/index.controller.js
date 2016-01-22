@@ -3,6 +3,13 @@
  */
 (function(){
   'use strict';
+
+  /**
+   * @memberof myApp.index
+   * @ngdoc controller
+   * @name indexController
+   */
+
   angular
     .module('myApp.index')
     .controller('indexController',indexController);
@@ -11,22 +18,21 @@
 
   function indexController($scope,userService, $location){
     var that = this;
-    that.validUsers = {};
-    that.navigate = navigateTo;
+    that.loggedUserName;
 
-    activate();
+    activate()
 
-    function activate() {
-      return userService.get().success(function(data) {
-        that.validUsers = data.users[0];
-        if(!that.validUsers.name){
-          that.validUsers.name = that.validUsers.email
+    function activate(){
+      for(var i = 0; i < userService.validUsers.length; i++){
+        if(userService.validUsers[i].logged){
+          if(userService.validUsers[i].name){
+            that.loggedUserName = userService.validUsers[i].name
+          }
+          else{
+            that.loggedUserName = userService.validUsers[i].email
+          }
         }
-      });
-    }
-
-    function navigateTo(path){
-      $location.path(path)
+      }
     }
   }
 })();

@@ -3,6 +3,13 @@
  */
 (function(){
   'use strict';
+
+  /**
+   * @memberof myApp.authentication
+   * @ngdoc factory
+   * @name userService
+   */
+
   angular
     .module('myApp.authentication')
     .factory('userService',userService);
@@ -10,8 +17,11 @@
   userService.$inject = ['$http'];
 
   function userService($http){
+    var validUsers = [];
     var users = {
-      get: getUsers
+      validUsers: validUsers,
+      get: getUsers,
+      update: updateUsers
     }
 
     return users;
@@ -29,6 +39,10 @@
         return err;
       }
 
+    }
+
+    function updateUsers(newUser){
+      users.validUsers = newUser;
     }
 
   }

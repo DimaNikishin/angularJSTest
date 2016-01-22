@@ -3,6 +3,13 @@
  */
 (function(){
   'use strict';
+
+  /**
+   * @memberof myApp.authentication
+   * @ngdoc factory
+   * @name authenticationService
+   */
+
   angular
     .module('myApp.authentication')
     .factory('authenticationService',authenticationService);
@@ -21,6 +28,7 @@
       for(var i = 0; i < validUsers.length; i++){
         if(user.email === validUsers[i].email && user.password === validUsers[i].password){
           response.success = true;
+          validUsers[i].logged = true;
           break;
         }
         else{

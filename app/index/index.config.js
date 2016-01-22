@@ -4,6 +4,11 @@
 (function(){
   'use strict';
 
+  /**
+   * @memberof myApp.index
+   * @ngdoc config
+   */
+
   angular
     .module('myApp.index')
     .config(indexConfig);
