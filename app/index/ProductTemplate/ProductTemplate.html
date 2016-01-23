@@ -1,7 +1,9 @@
 <div class="col-xs-12 col-sm-6 col-lg-4">
     <div class="product col-xs-10 col-sm-10 col-lg-10">
-        <div class="product-name">{{formStringToObject(product).number}}</div>
-        <div class="product-name">{{formStringToObject(product).name}}</div>
+        <div class="product-name">{{formStringToObject(product).number}}
+            <input class="product-checkbox" type="checkbox" ng-click="mainFunctional({productNumber:formStringToObject(product).number}).checkToRemove()">
+        </div>
+        <div class="product-name" ng-bind="formStringToObject(product).name"></div>
         <div class="product-price">
             <div>{{formStringToObject(product).price | customCurrency}}
                 <button class="btn btn-success" ng-click="mainFunctional({productNumber:formStringToObject(product).number}).openDescription()">Details</button>

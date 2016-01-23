@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12">
+            <div class="jumbotron">
+                <h1>Create</h1>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div>
+                <div ng-show="update.message" class="alert alert-danger">{{update.message}}</div>
+                <form name="updateUser" ng-submit="">
+                    <div class="form-group">
+                        <label for="Name">Name</label>
+                        <input type="text" placeholder="Name" name="name" id="Name" class="settings-input" ng-maxlength="2" ng-model="update.me" required/>
+                    </div>
+                    <div ng-if="updateUser.name.$touched">
+                        <span ng-show="updateUser.name.$error.required"  class="alert-danger">Please enter required name field</span>
+                        <span ng-show="updateUser.name.$error.maxlength"  class="alert-danger">Name should not be more than 255 symbols.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="currency">Currency</label>
+                        <input type="number" placeholder="Currency" name="currency" id="currency" class="settings-input" ng-model="update.me" currency required/>
+                    </div>
+                    <div ng-if="updateUser.currency.$touched">
+                        <span ng-show="updateUser.currency.$error.required"  class="alert-danger">Please enter required currency field</span>
+                        <span ng-show="updateUser.currency.$error.currency"  class="alert-danger">Not valid currency format</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="settings-input" ng-model="update.me" ng-maxlength="1000" required/>
+                    </div>
+                    <div ng-if="updateUser.description.$touched">
+                        <span ng-show="updateUser.description.$error.required"  class="alert-danger">Please enter required description field</span>
+                        <span ng-show="updateUser.description.$error.maxlength"  class="alert-danger">Name should not be more than 1000 symbols.</span>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-success" ng-disabled="!updateUser.$valid">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

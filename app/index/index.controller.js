@@ -20,6 +20,8 @@
     var that = this;
     that.loggedUserName;
     that.products = productsResolveService.data.products;
+    that.mainFunctional = mainFunctional;
+    that.deleteProduct = deleteProduct;
 
 
     activate()
@@ -36,7 +38,23 @@
         }
       }
     }
-    this.mainFunctional = function(productNumber){
+
+    function deleteProduct(){
+      function checkedFilter(element, index, array){
+        if(element.checked){
+          return false;
+        }
+        else{
+          return element;
+        }
+      }
+      that.products = that.products.filter(checkedFilter);
+      for(var i = 0; i< that.products.length; i++){
+        that.products[i].number = i+1;
+      }
+    }
+
+    function mainFunctional(productNumber){
 
       function productUpdate(element, index, array){
         if(array[index].number == productNumber && !array[index].description){
@@ -47,9 +65,18 @@
         }
       };
 
+      function productCheck(element, index, array){
+        if(array[index].number == productNumber){
+          array[index].checked = true;
+        }
+      };
+
       return {
         openDescription : function(){
           that.products.forEach(productUpdate);
+        },
+        checkToRemove: function(){
+          that.products.forEach(productCheck);
         }
       }
     }

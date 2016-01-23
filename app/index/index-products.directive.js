@@ -7,7 +7,7 @@
   /**
    * @memberof myApp.index
    * @ngdoc directive
-   * @name product
+   * @name indexProduct
    */
 
   angular
