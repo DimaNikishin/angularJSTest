@@ -28,3 +28,43 @@ input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
+.product-name {
+    border-bottom: #000088 dashed;
+    width: 100%;
+    height: 80px;
+    padding-top: 10px;
+    text-align: center !important;
+    font-size: 22px !important;
+}
+
+.product-price {
+    width: 90%;
+    height: 60px;
+    margin: 15px;
+    text-align: left !important;
+    font-size: 36px !important;
+}
+
+.product-price>div>button{
+    float: right;!important;
+    margin: 15px;!important;
+}
+
+.product {
+    margin: 40px;
+    height: 500px;
+    border: #000088 solid;
+    padding: 0px !important;
+    background-color: #ededed;
+}
+
+.product-list {
+    border-radius: 5px !important;
+    margin-bottom: 50px;
+}
+
+.description > p{
+    margin: 10%;
+    font-size: 22px !important;
+}

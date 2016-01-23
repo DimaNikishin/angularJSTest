@@ -19,7 +19,15 @@
     $routeProvider.when('/index', {
       templateUrl: 'index/index.html',
       controller: 'indexController',
-      controllerAs: 'index'
+      controllerAs: 'index',
+      resolve: {
+        productsResolveService: productsResolveService
+      }
     });
+  }
+  productsResolveService.$inject = ['productsService'];
+
+  function productsResolveService(productsService){
+    return productsService.get();
   }
 })();

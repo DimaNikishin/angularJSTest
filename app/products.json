@@ -1,0 +1,404 @@
+{
+  "products": [
+    {
+      "number": 1,
+      "name": "Product1",
+      "price": 1234.56,
+      "descriptionText":"Some information about Product1",
+      "checked": false,
+      "descriptionOpened": false
+    },
+    {
+      "number": 2,
+      "name": "Product1",
+      "price": 1234.56,
+      "descriptionText":"Some information about Product1",
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 3,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 4,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 5,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 6,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 7,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 8,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 9,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 10,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 11,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 12,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 13,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 14,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 15,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 16,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 17,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 18,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 19,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 20,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 21,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 22,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 23,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 24,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 25,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 26,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 27,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 28,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 29,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 30,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 31,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 32,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 33,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 34,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 35,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 36,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 37,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 38,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 39,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 40,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 41,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 42,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 43,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 44,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 45,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 46,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 47,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 48,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 49,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    },
+    {
+      "number": 50,
+      "name": "Product1",
+      "descriptionText":"Some information about Product1",
+      "price": 1234.56,
+      "checked": false,
+      "description": false
+    }
+  ]
+}

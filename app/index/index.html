@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-xs-12 col-sm-12 col-lg-12">
             <div class="jumbotron">
                 <h1>Welcome</h1>
                 <p ng-bind="index.loggedUserName"></p>
@@ -8,6 +8,11 @@
                     <button class="btn btn-success" ng-click="main.navigate('/settings')">Settings</button>
                     <button class="btn btn-danger" ng-click="main.navigate('/authentication')">Logout</button>
                 </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-lg-12">
+            <div class="col-xs-12 col-sm-12 col-lg-12 product-list">
+                <index-product ng-repeat="product in index.products" product="{{product}}" main-Functional="index.mainFunctional(productNumber)"></index-product>
             </div>
         </div>
     </div>

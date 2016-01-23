@@ -14,11 +14,13 @@
     .module('myApp.index')
     .controller('indexController',indexController);
 
-  indexController.$inject = ['$scope','userService','$location'];
+  indexController.$inject = ['$scope','userService','productsResolveService'];
 
-  function indexController($scope,userService, $location){
+  function indexController($scope,userService,productsResolveService){
     var that = this;
     that.loggedUserName;
+    that.products = productsResolveService.data.products;
+
 
     activate()
 
@@ -31,6 +33,23 @@
           else{
             that.loggedUserName = userService.validUsers[i].email
           }
+        }
+      }
+    }
+    this.mainFunctional = function(productNumber){
+
+      function productUpdate(element, index, array){
+        if(array[index].number == productNumber && !array[index].description){
+          array[index].description = true;
+        }
+        else{
+          array[index].description = false;
+        }
+      };
+
+      return {
+        openDescription : function(){
+          that.products.forEach(productUpdate);
         }
       }
     }
