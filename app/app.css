@@ -78,3 +78,8 @@ input[type=number]::-webkit-outer-spin-button {
 #description {
     height:200px;
 }
+
+.updateProduct {
+    margin-left: 40%;
+    margin-right: 40%;
+}

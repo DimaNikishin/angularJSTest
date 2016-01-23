@@ -14,9 +14,9 @@
     .module('myApp.index')
     .controller('indexController',indexController);
 
-  indexController.$inject = ['$scope','userService','productsResolveService','productsService'];
+  indexController.$inject = ['$scope','userService','productsResolveService','productsService','$location'];
 
-  function indexController($scope,userService,productsResolveService,productsService){
+  function indexController($scope,userService,productsResolveService,productsService,$location){
     var that = this;
     that.loggedUserName;
     that.products;
@@ -86,6 +86,9 @@
         },
         checkToRemove: function(){
           that.products.forEach(productCheck);
+        },
+        toUpdatePage: function(productNumber){
+          $location.path('/update/'+ productNumber)
         }
       }
     }

@@ -20,6 +20,10 @@
       templateUrl: 'productUpdate/productUpdate.html',
       controller: 'updateController',
       controllerAs: 'update'
+    }).when('/update/:productNumber', {
+      templateUrl: 'productUpdate/productUpdate.html',
+      controller: 'updateController',
+      controllerAs: 'update'
     });
   }
 })();

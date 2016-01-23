@@ -14,13 +14,14 @@
     .module('myApp.update')
     .controller('updateController',updateController);
 
-  updateController.$inject = ['$scope','productsService','$location'];
+  updateController.$inject = ['$scope','productsService','$location','$routeParams'];
 
-  function updateController($scope,productsService, $location){
+  function updateController($scope,productsService, $location,$routeParams){
     var that = this;
-    that.newUser = {};
+    that.newProduct = {};
     that.validProducts;
     that.message;
+    that.welcome;
     that.create = create;
 
     activate();
@@ -34,17 +35,36 @@
           that.validProducts = data.products;
         });
       }
+      if($routeParams.productNumber){
+        that.welcome = "Update"
+      }
+      else{
+        that.welcome = "Create"
+      }
     }
 
-    function create(user){
-      angular.extend(that.newUser,user);
-      that.newUser.number = that.validProducts.length + 1;
-      that.newUser.checked = false;
-      that.newUser.description = false;
-      that.validProducts.push(that.newUser);
-      productsService.update(that.validProducts);
-      that.update = "User created";
-      $location.path('/index');
+    function create(product){
+      if($routeParams.productNumber){
+        if(that.validProducts[$routeParams.productNumber-1]){
+          angular.extend(that.validProducts[$routeParams.productNumber-1], product);
+          productsService.update(that.validProducts);
+          that.update = "User updated";
+          $location.path('/index');
+        }
+        else{
+          $location.path('/404');
+        }
+      }
+      else{
+        angular.extend(that.newProduct,product);
+        that.newProduct.number = that.validProducts.length + 1;
+        that.newProduct.checked = false;
+        that.newProduct.description = false;
+        that.validProducts.push(that.newProduct);
+        productsService.update(that.validProducts);
+        that.update = "User created";
+        $location.path('/index');
+      }
     }
 
   }

@@ -3,7 +3,11 @@
         <div class="product-name">{{formStringToObject(product).number}}
             <input class="product-checkbox" type="checkbox" ng-click="mainFunctional({productNumber:formStringToObject(product).number}).checkToRemove()">
         </div>
-        <div class="product-name" ng-bind="formStringToObject(product).name"></div>
+        <div class="product-name">{{formStringToObject(product).name}}
+            <div class="updateProduct">
+                <button class="btn btn-info" ng-click="mainFunctional({productNumber:formStringToObject(product).number}).toUpdatePage(formStringToObject(product).number)">Update</button>
+            </div>
+        </div>
         <div class="product-price">
             <div>{{formStringToObject(product).price | customCurrency}}
                 <button class="btn btn-success" ng-click="mainFunctional({productNumber:formStringToObject(product).number}).openDescription()">Details</button>
