@@ -19,11 +19,11 @@
                     </div>
                     <div class="form-group">
                         <label for="currency">Currency</label>
-                        <input type="number" placeholder="Currency" name="currency" id="currency" class="settings-input" ng-model="update.me" currency required/>
+                        <input type="number" placeholder="Currency" name="currency" id="currency" class="settings-input" ng-model="update.me" valid="^[0-9]{4}(\,|\.)[0-9]{2}$" required/>
                     </div>
                     <div ng-if="updateUser.currency.$touched">
                         <span ng-show="updateUser.currency.$error.required"  class="alert-danger">Please enter required currency field</span>
-                        <span ng-show="updateUser.currency.$error.currency"  class="alert-danger">Not valid currency format</span>
+                        <span ng-show="updateUser.currency.$error.valid"  class="alert-danger">Not valid currency format</span>
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>

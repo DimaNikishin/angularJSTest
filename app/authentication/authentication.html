@@ -9,7 +9,7 @@
             <span ng-show="form.password.$error.required" class="alert-danger">Please enter password.</span>
             <span ng-show="form.password.$error.maxlength" class="alert-danger">Password should be less than 16 and more than 6 symbols.</span>
             <span ng-show="form.password.$error.minlength" class="alert-danger">Password should be less than 16 and more than 6 symbols.</span>
-            <span ng-show="form.password.$error.password" class="alert-danger">Illegal characters were entered</span>
+            <span ng-show="form.password.$error.valid" class="alert-danger">Illegal characters were entered</span>
         </div>
         <div class="form-group">
             <label for="Email">Email</label>
@@ -17,7 +17,7 @@
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" placeholder="Password" name="password" id="password" class="form-control" ng-model="authentication.user.password" required ng-minlength="6" ng-maxlength="16" password/>
+            <input type="password" placeholder="Password" name="password" id="password" class="form-control" ng-model="authentication.user.password" required ng-minlength="6" ng-maxlength="16" valid="^([a-zA-Z-0-9]{1,})$"/>
         </div>
         <div>
             <label id="rememberCheckBox"><input type="checkbox" text="Remember me">Remember me</label>

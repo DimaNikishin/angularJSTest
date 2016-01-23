@@ -7,6 +7,7 @@
 
 angular.module('myApp', [
   'ngRoute',
+  'myApp.core',
   'myApp.authentication',
   'myApp.index',
   'myApp.settings',
