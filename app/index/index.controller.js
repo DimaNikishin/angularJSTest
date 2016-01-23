@@ -14,12 +14,12 @@
     .module('myApp.index')
     .controller('indexController',indexController);
 
-  indexController.$inject = ['$scope','userService','productsResolveService'];
+  indexController.$inject = ['$scope','userService','productsResolveService','productsService'];
 
-  function indexController($scope,userService,productsResolveService){
+  function indexController($scope,userService,productsResolveService,productsService){
     var that = this;
     that.loggedUserName;
-    that.products = productsResolveService.data.products;
+    that.products;
     that.mainFunctional = mainFunctional;
     that.deleteProduct = deleteProduct;
 
@@ -36,7 +36,15 @@
             that.loggedUserName = userService.validUsers[i].email
           }
         }
+      };
+
+      if(productsService.products.length){
+        that.products = productsService.products;
       }
+      else{
+        that.products = productsResolveService.data.products;
+      }
+
     }
 
     function deleteProduct(){
@@ -52,6 +60,7 @@
       for(var i = 0; i< that.products.length; i++){
         that.products[i].number = i+1;
       }
+      productsService.update(that.products);
     }
 
     function mainFunctional(productNumber){

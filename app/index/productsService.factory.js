@@ -17,11 +17,14 @@
   productsService.$inject = ['$http'];
 
   function productsService($http){
-    var products = {
-      get: getProducts
+    var products = [];
+    var service = {
+      get: getProducts,
+      products: products,
+      update: setProducts
     }
 
-    return products;
+    return service;
 
     function getProducts(){
       return $http.get('http://localhost:8000/app/products.json')
@@ -36,6 +39,10 @@
         return err;
       }
 
+    }
+
+    function setProducts(newProducts){
+      service.products = newProducts;
     }
 
   }

@@ -18,13 +18,13 @@
 
   function userService($http){
     var validUsers = [];
-    var users = {
+    var service = {
       validUsers: validUsers,
       get: getUsers,
       update: updateUsers
     }
 
-    return users;
+    return service;
 
     function getUsers(){
       return $http.get('http://localhost:8000/app/users.json')
@@ -42,7 +42,7 @@
     }
 
     function updateUsers(newUser){
-      users.validUsers = newUser;
+      service.validUsers = newUser;
     }
 
   }
