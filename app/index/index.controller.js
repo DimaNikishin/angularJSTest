@@ -14,19 +14,26 @@
     .module('myApp.index')
     .controller('indexController',indexController);
 
-  indexController.$inject = ['$scope','userService','productsResolveService','productsService','$location'];
+  indexController.$inject = ['$scope','userService','productsResolveService','productsService','$location','customArrayFilter'];
 
-  function indexController($scope,userService,productsResolveService,productsService,$location){
+  function indexController($scope,userService,productsResolveService,productsService,$location,customArrayFilter){
     var that = this;
     that.loggedUserName;
     that.products;
     that.mainFunctional = mainFunctional;
     that.deleteProduct = deleteProduct;
+    that.changeProductList = changeProductList();
+    that.productList = productList;
+    that.filteredArray;
+    that.listOption = {};
+
 
 
     activate()
 
     function activate(){
+      _setupListOptionsObject(that.listOption,10,0)
+
       for(var i = 0; i < userService.validUsers.length; i++){
         if(userService.validUsers[i].logged){
           if(userService.validUsers[i].name){
@@ -44,7 +51,7 @@
       else{
         that.products = productsResolveService.data.products;
       }
-
+      that.filteredArray = that.products;
     }
 
     function deleteProduct(){
@@ -61,6 +68,8 @@
         that.products[i].number = i+1;
       }
       productsService.update(that.products);
+      that.filteredArray = that.products;
+      _setupListOptionsObject(that.listOption,10,0)
     }
 
     function mainFunctional(productNumber){
@@ -90,6 +99,51 @@
         toUpdatePage: function(productNumber){
           $location.path('/update/'+ productNumber)
         }
+      }
+    }
+
+    function productList(n){
+      _setupListOptionsObject(that.listOption,n,0,n);
+      that.filteredArray = customArrayFilter(that.products,that.listOption.startList,that.listOption.endList);
+    }
+
+    function changeProductList(){
+      return {
+       nextPage: function(){
+         _setupListOptionsObject(that.listOption,that.listOption.endList + that.listOption.increse,that.listOption.endList,that.listOption.increse);
+         that.filteredArray = customArrayFilter(that.products,that.listOption.startList,that.listOption.endList);
+       },
+        previousPage: function(){
+          _setupListOptionsObject(that.listOption,that.listOption.startList,that.listOption.startList - that.listOption.increse,that.listOption.increse);
+          that.filteredArray = customArrayFilter(that.products,that.listOption.startList,that.listOption.endList);
+        }
+      }
+    }
+
+    function _setupListOptionsObject(object,endList,startList,increse){
+      object.increse = increse;
+      object.endList = endList;
+      object.startList = startList;
+      if(increse){
+        if(!object.startList && increse >= that.products.length){
+          object.hidePreviousPage = true;
+          object.hideNextPage = true;
+        }else if(!object.startList){
+          object.hidePreviousPage = true;
+          object.hideNextPage = false;
+        }
+        else if(object.endList >= that.products.length){
+          object.hidePreviousPage = false;
+          object.hideNextPage = true;
+        }
+        else{
+          object.hidePreviousPage = false;
+          object.hideNextPage = false;
+        }
+      }
+      else{
+        object.hidePreviousPage = true;
+        object.hideNextPage = true;
       }
     }
   }
