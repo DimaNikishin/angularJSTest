@@ -4,6 +4,7 @@ module.exports = function(config){
     basePath : './',
 
     files : [
+      'app/bower_components/jquery/dist/jquery.min.js',
       'app/bower_components/angular/angular.js',
       'app/bower_components/angular-route/angular-route.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
@@ -11,7 +12,9 @@ module.exports = function(config){
       'app/index/**/*.module.js',
       'app/index/**/*.filter.js',
       'app/index/**/*.controller.js',
-      'app/test/**/**.js'
+      'app/test/**/**.js',
+      'app/index/**/*.directive.js',
+      'app/index/ProductTemplate/*.html'
     ],
 
     autoWatch : true,
@@ -24,12 +27,20 @@ module.exports = function(config){
             'karma-chrome-launcher',
             'karma-firefox-launcher',
             'karma-jasmine',
-            'karma-junit-reporter'
+            'karma-junit-reporter',
+            'karma-ng-html2js-preprocessor'
             ],
 
     junitReporter : {
       outputFile: 'test_out/unit.xml',
       suite: 'unit'
+    },
+    preprocessors: {
+      'app/index/ProductTemplate/*.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor : {
+      stripPrefix: 'app/'
     }
 
   });
